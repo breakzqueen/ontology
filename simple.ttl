@@ -1,0 +1,356 @@
+@prefix : <https://breakzqueen.github.io/ontology/simple#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://breakzqueen.github.io/ontology/simple> .
+
+<https://breakzqueen.github.io/ontology/simple> rdf:type owl:Ontology ;
+                                                 owl:versionIRI <https://breakzqueen.github.io/ontology/simple/1.0.0> .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.nsmntx.org/2019/10/clothingMaterials#Leather
+<http://www.nsmntx.org/2019/10/clothingMaterials#Leather> rdf:type owl:Class ;
+                                                          rdfs:subClassOf :Material .
+
+
+###  http://www.nsmntx.org/2019/10/clothingMaterials#Rubber
+<http://www.nsmntx.org/2019/10/clothingMaterials#Rubber> rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Material .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Barriers
+:Barriers rdf:type owl:Class ;
+          rdfs:subClassOf :Material .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Capability
+:Capability rdf:type owl:Class .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Company
+:Company rdf:type owl:Class ;
+         rdfs:subClassOf <https://gs1.org/voc/Organization> .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Component
+:Component rdf:type owl:Class ;
+           rdfs:subClassOf :IndividualObject .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Document
+:Document rdf:type owl:Class ;
+          rdfs:subClassOf :IndividualObject .
+
+
+###  https://breakzqueen.github.io/ontology/simple#ElectronicsCapabiliy
+:ElectronicsCapabiliy rdf:type owl:Class ;
+                      rdfs:subClassOf :Capability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Facility
+:Facility rdf:type owl:Class ;
+          rdfs:subClassOf :Company ;
+          owl:disjointWith <https://gs1.org/voc/Brand> .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Foam
+:Foam rdf:type owl:Class ;
+      rdfs:subClassOf :Material .
+
+
+###  https://breakzqueen.github.io/ontology/simple#IndividualObject
+:IndividualObject rdf:type owl:Class .
+
+
+###  https://breakzqueen.github.io/ontology/simple#IndividualProduct
+:IndividualProduct rdf:type owl:Class ;
+                   rdfs:subClassOf :IndividualObject .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Industry
+:Industry rdf:type owl:Class .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Insulation
+:Insulation rdf:type owl:Class ;
+            rdfs:subClassOf :Material .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Location
+:Location rdf:type owl:Class .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Material
+:Material rdf:type owl:Class ;
+          rdfs:subClassOf :IndividualObject .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Metals
+:Metals rdf:type owl:Class ;
+        rdfs:subClassOf :Material .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Plastics
+:Plastics rdf:type owl:Class ;
+          rdfs:subClassOf :Material .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Textiles
+:Textiles rdf:type owl:Class ;
+          rdfs:subClassOf :Material .
+
+
+###  https://breakzqueen.github.io/ontology/simple#ToyCapability
+:ToyCapability rdf:type owl:Class ;
+               rdfs:subClassOf :Capability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#Wood
+:Wood rdf:type owl:Class ;
+      rdfs:subClassOf :Material .
+
+
+###  https://breakzqueen.github.io/ontology/simple#accessories
+:accessories rdf:type owl:Class ;
+             rdfs:subClassOf :Industry .
+
+
+###  https://breakzqueen.github.io/ontology/simple#apparel
+:apparel rdf:type owl:Class ;
+         rdfs:subClassOf :Industry .
+
+
+###  https://breakzqueen.github.io/ontology/simple#chemicalRawMaterialProduction
+:chemicalRawMaterialProduction rdf:type owl:Class ;
+                               rdfs:subClassOf :Capability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#componentAndParts
+:componentAndParts rdf:type owl:Class ;
+                   rdfs:subClassOf :ToyCapability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#components
+:components rdf:type owl:Class ;
+            rdfs:subClassOf :ElectronicsCapabiliy .
+
+
+###  https://breakzqueen.github.io/ontology/simple#dieCuttingstamping
+:dieCuttingstamping rdf:type owl:Class ;
+                    rdfs:subClassOf :productSubAll .
+
+
+###  https://breakzqueen.github.io/ontology/simple#displayAssembly
+:displayAssembly rdf:type owl:Class ;
+                 rdfs:subClassOf :productSubAll .
+
+
+###  https://breakzqueen.github.io/ontology/simple#electronics
+:electronics rdf:type owl:Class ;
+             rdfs:subClassOf :Industry .
+
+
+###  https://breakzqueen.github.io/ontology/simple#finalProductAssembly
+:finalProductAssembly rdf:type owl:Class ;
+                      rdfs:subClassOf :Capability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#footwear
+:footwear rdf:type owl:Class ;
+          rdfs:subClassOf :Industry .
+
+
+###  https://breakzqueen.github.io/ontology/simple#gluing
+:gluing rdf:type owl:Class ;
+        rdfs:subClassOf :productSubAll .
+
+
+###  https://breakzqueen.github.io/ontology/simple#hardGoods
+:hardGoods rdf:type owl:Class ;
+           rdfs:subClassOf :Industry .
+
+
+###  https://breakzqueen.github.io/ontology/simple#hardProductComponentTrimProduction
+:hardProductComponentTrimProduction rdf:type owl:Class ;
+                                    rdfs:subClassOf :Capability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#homeFurnishings
+:homeFurnishings rdf:type owl:Class ;
+                 rdfs:subClassOf :Industry .
+
+
+###  https://breakzqueen.github.io/ontology/simple#homeTextiles
+:homeTextiles rdf:type owl:Class ;
+              rdfs:subClassOf :Industry .
+
+
+###  https://breakzqueen.github.io/ontology/simple#materialProduction
+:materialProduction rdf:type owl:Class ;
+                    rdfs:subClassOf :Capability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#molding
+:molding rdf:type owl:Class ;
+         rdfs:subClassOf :productSubAll .
+
+
+###  https://breakzqueen.github.io/ontology/simple#mountingdrilling
+:mountingdrilling rdf:type owl:Class ;
+                  rdfs:subClassOf :productSubAll .
+
+
+###  https://breakzqueen.github.io/ontology/simple#packagingManufacturer
+:packagingManufacturer rdf:type owl:Class ;
+                       rdfs:subClassOf :ElectronicsCapabiliy .
+
+
+###  https://breakzqueen.github.io/ontology/simple#packagingProduction
+:packagingProduction rdf:type owl:Class ;
+                     rdfs:subClassOf :Capability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#painting
+:painting rdf:type owl:Class ;
+          rdfs:subClassOf :productSubAll .
+
+
+###  https://breakzqueen.github.io/ontology/simple#pcbAssembly
+:pcbAssembly rdf:type owl:Class ;
+             rdfs:subClassOf :productSubAll .
+
+
+###  https://breakzqueen.github.io/ontology/simple#printing
+:printing rdf:type owl:Class ;
+          rdfs:subClassOf :productSubAll .
+
+
+###  https://breakzqueen.github.io/ontology/simple#printingProductDyeingAndLaundering
+:printingProductDyeingAndLaundering rdf:type owl:Class ;
+                                    rdfs:subClassOf :Capability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#productAssembly
+:productAssembly rdf:type owl:Class ;
+                 rdfs:subClassOf :ToyCapability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#productSubAll
+:productSubAll rdf:type owl:Class ;
+               rdfs:subClassOf :ElectronicsCapabiliy .
+
+
+###  https://breakzqueen.github.io/ontology/simple#rawMaterial
+:rawMaterial rdf:type owl:Class ;
+             rdfs:subClassOf :ToyCapability .
+
+
+###  https://breakzqueen.github.io/ontology/simple#rawMaterialManufacturer
+:rawMaterialManufacturer rdf:type owl:Class ;
+                         rdfs:subClassOf :ElectronicsCapabiliy .
+
+
+###  https://breakzqueen.github.io/ontology/simple#toys
+:toys rdf:type owl:Class ;
+      rdfs:subClassOf :Industry .
+
+
+###  https://breakzqueen.github.io/ontology/simple#welding
+:welding rdf:type owl:Class ;
+         rdfs:subClassOf :productSubAll .
+
+
+###  https://gs1.org/voc/Brand
+<https://gs1.org/voc/Brand> rdf:type owl:Class ;
+                            rdfs:subClassOf :Company .
+
+
+###  https://gs1.org/voc/Organization
+<https://gs1.org/voc/Organization> rdf:type owl:Class .
+
+
+###  https://gs1.org/voc/Place
+<https://gs1.org/voc/Place> rdf:type owl:Class .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.nsmntx.org/2019/10/clothingMaterials#Leather>
+                <http://www.nsmntx.org/2019/10/clothingMaterials#Rubber>
+                :Barriers
+                :Foam
+                :Insulation
+                :Metals
+                :Plastics
+                :Textiles
+                :Wood
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Capability
+                :IndividualObject
+                :Industry
+                :Location
+                <https://gs1.org/voc/Organization>
+                <https://gs1.org/voc/Place>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Capability
+                :IndividualObject
+                :Industry
+                <https://gs1.org/voc/Organization>
+                <https://gs1.org/voc/Place>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Component
+                :Document
+                :IndividualProduct
+                :Material
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ElectronicsCapabiliy
+                :ToyCapability
+                :chemicalRawMaterialProduction
+                :finalProductAssembly
+                :hardProductComponentTrimProduction
+                :materialProduction
+                :packagingProduction
+                :printingProductDyeingAndLaundering
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :dieCuttingstamping
+                :displayAssembly
+                :gluing
+                :molding
+                :mountingdrilling
+                :painting
+                :pcbAssembly
+                :printing
+                :welding
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
