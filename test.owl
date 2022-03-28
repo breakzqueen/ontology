@@ -1,0 +1,315 @@
+@prefix : <http://www.semanticweb.org/svijghen/ontologies/2022/2/test#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/svijghen/ontologies/2022/2/test> .
+
+<http://www.semanticweb.org/svijghen/ontologies/2022/2/test> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#hasCapability
+:hasCapability rdf:type owl:ObjectProperty ;
+               rdfs:domain <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#haschemicalRawMaterialProductionCapability
+:haschemicalRawMaterialProductionCapability rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf :hasCapability ;
+                                            rdfs:domain :chemicalRawMaterialProduction ;
+                                            rdfs:range :Chem .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#hasfinalProductAssemblyCapability
+:hasfinalProductAssemblyCapability rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf :hasCapability ;
+                                   rdfs:domain :finalProductAssembly ;
+                                   rdfs:range :Sewing .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#hashardProductComponentTrimProductionCapability
+:hashardProductComponentTrimProductionCapability rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf :hasCapability ;
+                                                 rdfs:domain :hardProductComponentTrimProduction ;
+                                                 rdfs:range :Trim .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#hasmaterialProductionCapability
+:hasmaterialProductionCapability rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf :hasCapability ;
+                                 rdfs:domain :materialProduction ;
+                                 rdfs:range :Materials .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#haspackagingProductionCapability
+:haspackagingProductionCapability rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf :hasCapability ;
+                                  rdfs:domain :packagingProduction ;
+                                  rdfs:range :Pkg .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#hasprintingProductDyeingAndLaunderingCapability
+:hasprintingProductDyeingAndLaunderingCapability rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf :hasCapability ;
+                                                 rdfs:domain :printingProductDyeingAndLaundering ;
+                                                 rdfs:range :PrintDye .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#country_name
+:country_name rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Organization ;
+              rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Accessories
+:Accessories rdf:type owl:Class ;
+             rdfs:subClassOf :Category .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Apparel
+:Apparel rdf:type owl:Class ;
+         rdfs:subClassOf :Category .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Category
+:Category rdf:type owl:Class ;
+          owl:disjointWith :Organization .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Chem
+:Chem rdf:type owl:Class ;
+      rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Company
+:Company rdf:type owl:Class ;
+         rdfs:subClassOf :Organization .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Electronics
+:Electronics rdf:type owl:Class ;
+             rdfs:subClassOf :Category .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Electronics_Facility
+:Electronics_Facility rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Footwear
+:Footwear rdf:type owl:Class ;
+          rdfs:subClassOf :Category .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Hard_Goods
+:Hard_Goods rdf:type owl:Class ;
+            rdfs:subClassOf :Category .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Home_Furnishings
+:Home_Furnishings rdf:type owl:Class ;
+                  rdfs:subClassOf :Category .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Home_Textiles
+:Home_Textiles rdf:type owl:Class ;
+               rdfs:subClassOf :Category .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Logistics_Facility
+:Logistics_Facility rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Materials
+:Materials rdf:type owl:Class ;
+           rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Organization
+:Organization rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Pkg
+:Pkg rdf:type owl:Class ;
+     rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#PrintDye
+:PrintDye rdf:type owl:Class ;
+          rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Process
+:Process rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Sewing
+:Sewing rdf:type owl:Class ;
+        rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Toy_Facility
+:Toy_Facility rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Toys
+:Toys rdf:type owl:Class ;
+      rdfs:subClassOf :Category .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#Trim
+:Trim rdf:type owl:Class ;
+      rdfs:subClassOf :Process .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#chemicalRawMaterialProduction
+:chemicalRawMaterialProduction rdf:type owl:Class ;
+                               rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#componentAndParts
+:componentAndParts rdf:type owl:Class ;
+                   rdfs:subClassOf :Toy_Facility .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#components
+:components rdf:type owl:Class ;
+            rdfs:subClassOf :Electronics_Facility .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#finalProductAssembly
+:finalProductAssembly rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#hardProductComponentTrimProduction
+:hardProductComponentTrimProduction rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#materialProduction
+:materialProduction rdf:type owl:Class ;
+                    rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#other
+:other rdf:type owl:Class ;
+       rdfs:subClassOf :Toy_Facility .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#packagingManufacturer
+:packagingManufacturer rdf:type owl:Class ;
+                       rdfs:subClassOf :Electronics_Facility .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#packagingProduction
+:packagingProduction rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#printingProductDyeingAndLaundering
+:printingProductDyeingAndLaundering rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#productAssembly
+:productAssembly rdf:type owl:Class ;
+                 rdfs:subClassOf :Toy_Facility .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#productSubAll
+:productSubAll rdf:type owl:Class ;
+               rdfs:subClassOf :Electronics_Facility .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#rawMaterial
+:rawMaterial rdf:type owl:Class ;
+             rdfs:subClassOf :Toy_Facility .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/test#rawMaterialManufacturer
+:rawMaterialManufacturer rdf:type owl:Class ;
+                         rdfs:subClassOf :Electronics_Facility .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Brand
+<http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Brand> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf :Company ;
+                                                                                   owl:disjointWith <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility
+<http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf :Company .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Chem
+                :Materials
+                :Pkg
+                :PrintDye
+                :Sewing
+                :Trim
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Electronics_Facility
+                :Logistics_Facility
+                :Toy_Facility
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Electronics_Facility
+                :Logistics_Facility
+                :Toy_Facility
+                :chemicalRawMaterialProduction
+                :finalProductAssembly
+                :hardProductComponentTrimProduction
+                :materialProduction
+                :packagingProduction
+                :printingProductDyeingAndLaundering
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :componentAndParts
+                :other
+                :productAssembly
+                :rawMaterial
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :components
+                :packagingManufacturer
+                :productSubAll
+                :rawMaterialManufacturer
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
