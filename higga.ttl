@@ -1,0 +1,300 @@
+@prefix : <https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://raw.githubusercontent.com/breakzqueen/ontology/main/higga> .
+
+<https://raw.githubusercontent.com/breakzqueen/ontology/main/higga> rdf:type owl:Ontology ;
+                                                                     owl:versionIRI <ttps://raw.githubusercontent.com/breakzqueen/ontology/main/higga/1.0.0> ;
+                                                                     owl:imports <http://xmlns.com/foaf/0.1/> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#categoryOf
+:categoryOf rdf:type owl:ObjectProperty ;
+            owl:inverseOf :inCategory ;
+            rdfs:domain :Category ;
+            rdfs:range <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#hasCapability
+:hasCapability rdf:type owl:ObjectProperty ;
+               rdfs:domain <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> ;
+               rdfs:range :Process .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#haschemicalRawMaterialProductionCapability
+:haschemicalRawMaterialProductionCapability rdf:type owl:ObjectProperty ;
+                                            rdfs:subPropertyOf :hasCapability ;
+                                            rdfs:domain :ChemicalRawMaterialProductionFacility ;
+                                            rdfs:range :Chemical .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#hasfinalProductAssemblyCapability
+:hasfinalProductAssemblyCapability rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf :hasCapability ;
+                                   rdfs:domain :FinalProductAssemblyFacility ;
+                                   rdfs:range :Sewing .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#hashardProductComponentTrimProductionCapability
+:hashardProductComponentTrimProductionCapability rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf :hasCapability ;
+                                                 rdfs:domain :HardProductComponentTrimProductionFacility ;
+                                                 rdfs:range :Trim .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#hasmaterialProductionCapability
+:hasmaterialProductionCapability rdf:type owl:ObjectProperty ;
+                                 rdfs:subPropertyOf :hasCapability ;
+                                 rdfs:domain :MaterialProductionFacility ;
+                                 rdfs:range :Materials .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#haspackagingProductionCapability
+:haspackagingProductionCapability rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf :hasCapability ;
+                                  rdfs:domain :PackagingProductionFacility ;
+                                  rdfs:range :Packaging .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#hasprintingProductDyeingAndLaunderingCapability
+:hasprintingProductDyeingAndLaunderingCapability rdf:type owl:ObjectProperty ;
+                                                 rdfs:subPropertyOf :hasCapability ;
+                                                 rdfs:domain :PrintingProductDyeingAndLaunderingFacility ;
+                                                 rdfs:range :PrintDye .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#inCategory
+:inCategory rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> ;
+            rdfs:range :Category .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#country_name
+:country_name rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Organization ;
+              rdfs:range xsd:string .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#id
+:id rdf:type owl:DatatypeProperty ;
+    rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
+                <http://xmlns.com/foaf/0.1/Agent> ,
+                <http://xmlns.com/foaf/0.1/Document> ,
+                :Organization ,
+                :Process ;
+    rdfs:range xsd:anyURI .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://schema.org/Person
+<http://schema.org/Person> rdf:type owl:Class ;
+                           owl:equivalentClass <http://www.w3.org/2000/10/swap/pim/contact#Person> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Brand
+<http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Brand> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf :Company ;
+                                                                                   owl:disjointWith <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility
+<http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf :Company .
+
+
+###  http://www.w3.org/2000/10/swap/pim/contact#Person
+<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Organization
+<http://xmlns.com/foaf/0.1/Organization> owl:equivalentClass :Organization .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Accessories
+:Accessories rdf:type owl:Class ;
+             rdfs:subClassOf :Category .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Apparel
+:Apparel rdf:type owl:Class ;
+         rdfs:subClassOf :Category .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Category
+:Category rdf:type owl:Class ;
+          owl:disjointWith :Organization .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Chemical
+:Chemical rdf:type owl:Class ;
+          rdfs:subClassOf :Process .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#ChemicalRawMaterialProductionFacility
+:ChemicalRawMaterialProductionFacility rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> ;
+                                       rdfs:label "Chemical & Raw Material Production"@en .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Company
+:Company rdf:type owl:Class ;
+         rdfs:subClassOf :Organization .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Electronics
+:Electronics rdf:type owl:Class ;
+             rdfs:subClassOf :Category .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#ElectronicsFacility
+:ElectronicsFacility rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#FinalProductAssemblyFacility
+:FinalProductAssemblyFacility rdf:type owl:Class ;
+                              rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> ;
+                              rdfs:label "Final Product Assembly"@en .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Footwear
+:Footwear rdf:type owl:Class ;
+          rdfs:subClassOf :Category .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#HardGoods
+:HardGoods rdf:type owl:Class ;
+           rdfs:subClassOf :Category .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#HardProductComponentTrimProductionFacility
+:HardProductComponentTrimProductionFacility rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> ;
+                                            rdfs:label "Hard Product Component & Trim Production"@en .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#HomeFurnishings
+:HomeFurnishings rdf:type owl:Class ;
+                 rdfs:subClassOf :Category .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#HomeTextiles
+:HomeTextiles rdf:type owl:Class ;
+              rdfs:subClassOf :Category .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#LogisticsFacility
+:LogisticsFacility rdf:type owl:Class ;
+                   rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#MaterialProductionFacility
+:MaterialProductionFacility rdf:type owl:Class ;
+                            rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Materials
+:Materials rdf:type owl:Class ;
+           rdfs:subClassOf :Process .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Organization
+:Organization rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Packaging
+:Packaging rdf:type owl:Class ;
+           rdfs:subClassOf :Process .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#PackagingProductionFacility
+:PackagingProductionFacility rdf:type owl:Class ;
+                             rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#PrintDye
+:PrintDye rdf:type owl:Class ;
+          rdfs:subClassOf :Process .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#PrintingProductDyeingAndLaunderingFacility
+:PrintingProductDyeingAndLaunderingFacility rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> ;
+                                            rdfs:label "Printing, Product Dyeing and Laundering"@en .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Process
+:Process rdf:type owl:Class .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Sewing
+:Sewing rdf:type owl:Class ;
+        rdfs:subClassOf :Process .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#ToyFacility
+:ToyFacility rdf:type owl:Class ;
+             rdfs:subClassOf <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Facility> .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Toys
+:Toys rdf:type owl:Class ;
+      rdfs:subClassOf :Category .
+
+
+###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Trim
+:Trim rdf:type owl:Class ;
+      rdfs:subClassOf :Process .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Chemical
+                :Materials
+                :Packaging
+                :PrintDye
+                :Sewing
+                :Trim
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ChemicalRawMaterialProductionFacility
+                :ElectronicsFacility
+                :FinalProductAssemblyFacility
+                :HardProductComponentTrimProductionFacility
+                :LogisticsFacility
+                :MaterialProductionFacility
+                :PackagingProductionFacility
+                :PrintingProductDyeingAndLaunderingFacility
+                :ToyFacility
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :ElectronicsFacility
+                :LogisticsFacility
+                :ToyFacility
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
