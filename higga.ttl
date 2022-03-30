@@ -81,16 +81,13 @@
 
 ###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#country_name
 :country_name rdf:type owl:DatatypeProperty ;
-              rdfs:domain :Organization ;
               rdfs:range xsd:string .
 
 
 ###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#id
 :id rdf:type owl:DatatypeProperty ;
-    rdfs:domain <http://www.w3.org/2000/10/swap/pim/contact#Person> ,
-                <http://xmlns.com/foaf/0.1/Agent> ,
+    rdfs:domain <http://xmlns.com/foaf/0.1/Agent> ,
                 <http://xmlns.com/foaf/0.1/Document> ,
-                :Organization ,
                 :Process ;
     rdfs:range xsd:anyURI .
 
@@ -98,11 +95,6 @@
 #################################################################
 #    Classes
 #################################################################
-
-###  http://schema.org/Person
-<http://schema.org/Person> rdf:type owl:Class ;
-                           owl:equivalentClass <http://www.w3.org/2000/10/swap/pim/contact#Person> .
-
 
 ###  http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Brand
 <http://www.semanticweb.org/svijghen/ontologies/2022/2/untitled-ontology-27#Brand> rdf:type owl:Class ;
@@ -115,12 +107,8 @@
                                                                                       rdfs:subClassOf :Company .
 
 
-###  http://www.w3.org/2000/10/swap/pim/contact#Person
-<http://www.w3.org/2000/10/swap/pim/contact#Person> rdf:type owl:Class .
-
-
-###  http://xmlns.com/foaf/0.1/Organization
-<http://xmlns.com/foaf/0.1/Organization> owl:equivalentClass :Organization .
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdfs:subClassOf owl:Thing .
 
 
 ###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Accessories
@@ -134,8 +122,7 @@
 
 
 ###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Category
-:Category rdf:type owl:Class ;
-          owl:disjointWith :Organization .
+:Category rdf:type owl:Class .
 
 
 ###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Chemical
@@ -151,7 +138,7 @@
 
 ###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Company
 :Company rdf:type owl:Class ;
-         rdfs:subClassOf :Organization .
+         rdfs:subClassOf <http://xmlns.com/foaf/0.1/Organization> .
 
 
 ###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Electronics
@@ -211,10 +198,6 @@
            rdfs:subClassOf :Process .
 
 
-###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Organization
-:Organization rdf:type owl:Class .
-
-
 ###  https://raw.githubusercontent.com/breakzqueen/ontology/main/higga#Packaging
 :Packaging rdf:type owl:Class ;
            rdfs:subClassOf :Process .
@@ -263,17 +246,6 @@
 #################################################################
 #    General axioms
 #################################################################
-
-[ rdf:type owl:AllDisjointClasses ;
-  owl:members ( :Chemical
-                :Materials
-                :Packaging
-                :PrintDye
-                :Sewing
-                :Trim
-              )
-] .
-
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :ChemicalRawMaterialProductionFacility
